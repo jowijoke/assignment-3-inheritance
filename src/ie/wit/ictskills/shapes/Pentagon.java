@@ -15,25 +15,25 @@ public class Pentagon extends Shapes
     boolean isVisible = true;
         
     public Pentagon()
-    {   
-        super( );
+    {   // super(xPosition, yPosition, color, isVisible)
+        super(0, 0, "black", false );
         this.radius = 50;
     }
 
     public Pentagon(int radius, int xPosition, int yPosition, String color)
     { 
-        //super(...);
-        //...      
+      super(xPosition, yPosition, color, true);
+      this.radius = radius;
     }
 
+    @Override
     public void changeSize(int scale)
     {
-        //...
-        //...
-        //...
+        this.radius = radius*scale;
     }
 
-    void draw()
+   @Override
+   protected void draw()
     {
         if(isVisible) {
             //Ref: http://mathworld.wolfram.com/Pentagon.html
@@ -63,4 +63,10 @@ public class Pentagon extends Shapes
             canvas.wait(10);
         }
     }
+   public static void main(String[] args) 
+   {
+    Pentagon p = new Pentagon();
+    p.makeVisible();
+     
+   } 
 }

@@ -28,7 +28,7 @@ public class Rectangle extends Shapes
     if (xSideLength > 0 && ySideLength > 0)
     {
       super.erase();
-      this.xSideLength = xSideLength*scale ;
+      this.xSideLength = xSideLength*scale;
       this.ySideLength = ySideLength*scale;
       draw();
     }
