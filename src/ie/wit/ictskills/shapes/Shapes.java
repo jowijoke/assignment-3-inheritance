@@ -13,6 +13,10 @@ public abstract class Shapes
     String color; 
     boolean isVisible;
     
+    public Shapes ()
+    {
+     
+    }
     
     public Shapes(int xPosition, int yPosition, String color, boolean isVisible)
     {
@@ -24,7 +28,67 @@ public abstract class Shapes
 
     abstract void draw();
     abstract void changeSize(int scale);
+ 
+    public void makeVisible()
+    {
+        isVisible = true;
+        draw();
+    }
     
+    public void makeInvisible()
+    {
+        erase();
+        isVisible = false;
+    }
+    
+    /**
+     * Move the triangle to new position whose coordinates in pixels will be (x, y).
+     * @param x the new x coordinate
+     * @param y the new y coordinate
+     */
+    public void moveTo(int x, int y)
+    {
+        xPosition = x;
+        yPosition = y;
+    }
+    
+    public void moveRight()
+    {
+        moveHorizontal(20);
+    }
+
+    public void moveLeft()
+    {
+        moveHorizontal(-20);
+    }
+
+ 
+    public void moveUp()
+    {
+        moveVertical(-20);
+    }
+
+ 
+    public void moveDown()
+    {
+        moveVertical(20);
+    }
+
+ 
+    public void moveHorizontal(int distance)
+    {
+        erase();
+        xPosition += distance;
+        draw();
+    }
+
+ 
+    public void moveVertical(int distance)
+    {
+        erase();
+        yPosition += distance;
+        draw();
+    }
 
     public void changeColor(String color)
     {

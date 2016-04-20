@@ -9,18 +9,14 @@ import java.awt.Polygon;
  * @author   jfitzgerald 2014-05-23
  * 
  */
-public class Pentagon //extends Shapes
+public class Pentagon extends Shapes
 {
     private int radius;//radius of circumscribing circle
     boolean isVisible = true;
-    
-    int xPosition;
-    int yPosition;
-    String color;
-    
+        
     public Pentagon()
     {   
-        //super(...);
+        super( );
         this.radius = 50;
     }
 

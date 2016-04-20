@@ -33,14 +33,23 @@ public class Triangle extends Shapes implements Measurable
     }
 
 	@Override
-	void draw() {
-		// TODO Auto-generated method stub
+	protected void draw() {
+	  if(isVisible) {
+      Canvas canvas = Canvas.getCanvas();
+      int[] xpoints = { xPosition, xPosition + (width/2), xPosition - (width/2) };
+      int[] ypoints = { yPosition, yPosition + height, yPosition + height };
+      canvas.draw(this, color, new Polygon(xpoints, ypoints, 3));
+      canvas.wait(10);
+  }
 		
 	}
 
 	@Override
-	void changeSize(int scale) {
-		// TODO Auto-generated method stub
+	protected void changeSize(int scale) {
+	  super.erase();
+    height *= scale;
+    width *= scale;
+    draw();
 		
 	}
 
