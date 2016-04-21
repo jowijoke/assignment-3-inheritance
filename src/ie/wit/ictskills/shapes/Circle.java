@@ -7,86 +7,42 @@ import java.awt.geom.Ellipse2D;
  * 
  * @author  Michael Kolling and David J. Barnes
  * @version 2006.03.30
+ * 
+ * @author jfitzgerald
+ * @version 2016-04-10
+ * 
  */
 
-public class Circle
+public class Circle extends Ellipse implements Measurable
 {
-    private int diameter;
-    private int xPosition;
-    private int yPosition;
-    private String color;
-    private boolean isVisible;
-    
     /**
-     * Create a new circle at default position with default color.
+     * Create a new circle at default position with default color & diameter.
      */
     public Circle()
     {
-        diameter = 30;
-        xPosition = 20;
-        yPosition = 60;
-        color = "blue";
-        isVisible = false;
+        // Invokes super class Ellipse with xDiameter & yDiameter == 100 units
+        // Default circle positioned at 0,0
+        // super(xdiameter, ydiameter, xPosition, yPosition, color, isVisible)
+       super(100, 100, 0, 0, "red", false);
     }
 
-    /**
-     * Make this circle visible. If it was already visible, do nothing.
-     */
-    public void makeVisible()
+    public Circle (int xdiameter, int ydiameter, int xPosition, int yPosition, String color)
     {
-        isVisible = true;
-        draw();
+        super(xdiameter, ydiameter, xPosition, yPosition, color, true);
+    }
+
+    @Override
+    public double perimeter() {
+
+        return Math.PI*xdiameter;
     }
     
-    /**
-     * Make this circle invisible. If it was already invisible, do nothing.
-     */
-    public void makeInvisible()
-    {
-        erase();
-        isVisible = false;
-    }
-
-    /**
-     * Change the circle size
-     */
     
-    public void changeSize(int scale)
+    public static void main(String[] args) 
     {
-        erase();
-        diameter *= scale;
-        draw();
+     Circle circle = new Circle();
+     circle.makeVisible();
+      
     }
-
-
-    /**
-     * Draw the circle with current specifications on screen.
-     */
-    private void draw()
-    {
-        if(isVisible) {
-            Canvas canvas = Canvas.getCanvas();
-            canvas.draw(this, color, new Ellipse2D.Double(xPosition, yPosition, 
-                                                          diameter, diameter));
-            canvas.wait(10);
-        }
-    }
-
-    /**
-     * Erase the circle on screen.
-     */
-    private void erase()
-    {
-        if(isVisible) {
-            Canvas canvas = Canvas.getCanvas();
-            canvas.erase(this);
-        }
-    }
-
-    public static void main (String[] args) 
-    {
-       Circle circle = new Circle();
-       circle.makeVisible();
-       circle.draw();
-    }
+    
 }

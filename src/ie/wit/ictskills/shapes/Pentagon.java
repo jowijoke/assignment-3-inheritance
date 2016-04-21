@@ -29,7 +29,7 @@ public class Pentagon extends Shapes
     @Override
     public void changeSize(int scale)
     {
-        this.radius = radius*scale;
+        this.radius *= scale;
     }
 
    @Override

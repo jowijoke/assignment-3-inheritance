@@ -23,13 +23,13 @@ public class Rectangle extends Shapes
   }
 
   @Override
-  public void changeSize(int scale)
+  protected void changeSize(int scale)
   {
     if (xSideLength > 0 && ySideLength > 0)
     {
       super.erase();
-      this.xSideLength = xSideLength*scale;
-      this.ySideLength = ySideLength*scale;
+      this.xSideLength *= scale;
+      this.ySideLength *= scale;
       draw();
     }
     else
@@ -37,12 +37,6 @@ public class Rectangle extends Shapes
       System.out.println("Enter positive dimensions");
     }
 
-  }
-
-  public void changeColor(String color)
-  {
-    this.color = color;
-    draw();
   }
 
   @Override
