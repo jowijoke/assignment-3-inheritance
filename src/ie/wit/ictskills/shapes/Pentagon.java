@@ -2,6 +2,7 @@ package ie.wit.ictskills.shapes;
 
 // TODO Task 2: Complete Pentagon class
 import java.awt.Polygon;
+
 /**
  * @file    Pentagon.java
  * @brief   This class describes a pentagon and has behaviour to display, resize and move objects
@@ -9,7 +10,7 @@ import java.awt.Polygon;
  * @author   jfitzgerald 2014-05-23
  * 
  */
-public class Pentagon extends Shapes
+public class Pentagon extends Shapes implements Measurable
 {
     private int radius;//radius of circumscribing circle
     boolean isVisible = true;
@@ -63,6 +64,14 @@ public class Pentagon extends Shapes
             canvas.wait(10);
         }
     }
+   
+   @Override
+   public double perimeter()
+   {
+     return 10*radius*Math.sin(Math.PI/5); 
+   }
+   
+   
    public static void main(String[] args) 
    {
     Pentagon p = new Pentagon();

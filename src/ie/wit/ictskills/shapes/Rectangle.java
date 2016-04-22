@@ -1,8 +1,10 @@
 package ie.wit.ictskills.shapes;
 
+import ie.wit.ictskills.util.ellipse.EllipseMeasure;
+
 // TODO Task 1: Refactor: derive from Shapes super class
 
-public class Rectangle extends Shapes
+public class Rectangle extends Shapes implements Measurable
 {
   private int xSideLength;
   private int ySideLength;
@@ -48,6 +50,12 @@ public class Rectangle extends Shapes
       canvas.draw(this, color, new java.awt.Rectangle(xPosition, yPosition, xSideLength, ySideLength));
       canvas.wait(10);
     }
+  }
+  
+  @Override
+  public double perimeter() 
+  {   
+    return (xSideLength + ySideLength) * 2;
   }
   
   public static void main(String[] args) 

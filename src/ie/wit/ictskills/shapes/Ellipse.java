@@ -12,7 +12,7 @@ import java.awt.geom.*;
  * @version  
  */
 
-public class Ellipse extends Shapes
+public class Ellipse extends Shapes implements Measurable
 
 {
     protected int xdiameter;
@@ -26,7 +26,7 @@ public class Ellipse extends Shapes
 
     }
 
-    public Ellipse(int xdiameter, int ydiameter, int xPosition, int yPosition, String color, boolean isVisible)
+    public Ellipse(int xdiameter, int ydiameter, int xPosition, int yPosition, String color)
     {
       super(xPosition, yPosition, color, true);
       this.xdiameter = xdiameter;
@@ -60,19 +60,10 @@ public class Ellipse extends Shapes
     }
     }
     
-    public static void main(String[] args) 
-    {
-     Ellipse ellipse = new Ellipse();
-     ellipse.makeVisible();
-      
-    }
-    
-    
-
-  // @Override
-	//public double perimeter() 
-	//{   
-   //  return EllipseMeasure.perimeter(xdiameter, ydiameter);
-        //	}
+    @Override
+	public double perimeter() 
+	{   
+    return EllipseMeasure.perimeter(xdiameter, ydiameter);
+  }
 
 }

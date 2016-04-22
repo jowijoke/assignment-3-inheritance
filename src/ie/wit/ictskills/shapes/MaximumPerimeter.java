@@ -1,12 +1,12 @@
 package ie.wit.ictskills.shapes;
 
 //TODO Task 5: Fully implement Measurable interface in classes Circle, Pentagon, Rectangle, Triangle, Ellipse
-
+import java.util.ArrayList;
 public class MaximumPerimeter {
 
 	public static void main(String[] args)
     {
-/*      ArrayList<Measurable> measurables = new ArrayList<>();  
+      ArrayList<Measurable> measurables = new ArrayList<>();  
 
         measurables.add(new Circle(30, 20, 60, "red"));
         measurables.add(new Circle(40, 30, 70, "blue"));
@@ -32,8 +32,24 @@ public class MaximumPerimeter {
         measurables.add(new Ellipse(40, 50, 170, 60, "blue"));   
         measurables.add(new Ellipse(50, 60, 180, 70, "green"));  
         measurables.add(new Ellipse(60, 70, 190, 80, "black"));  
-*/
+
         double maxPerimeter = 0; 
+        
+        for(Measurable shape : measurables)
+        {
+          // method makeVisible  involved on each object referenced by a Shapes type reference.
+          shape.perimeter();
+          // method invoked,makeVisible, is implemented not in the Shapes class but in the the particular sub class
+        
+        if(shape.perimeter() > maxPerimeter)
+        {
+          maxPerimeter = shape.perimeter();
+          
+        }
+        }
+        
+        
+          
         
         System.out.println("Maximum perimeter: " + maxPerimeter);
     }

@@ -23,8 +23,6 @@ public class Triangle extends Shapes implements Measurable
         this.width = width;
         
     }
-    // ....
-    // ....
 
     @Override
     public double perimeter() 

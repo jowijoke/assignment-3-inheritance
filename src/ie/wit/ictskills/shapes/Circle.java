@@ -23,12 +23,12 @@ public class Circle extends Ellipse implements Measurable
         // Invokes super class Ellipse with xDiameter & yDiameter == 100 units
         // Default circle positioned at 0,0
         // super(xdiameter, ydiameter, xPosition, yPosition, color, isVisible)
-       super(100, 100, 0, 0, "red", false);
+       super(100, 100, 0, 0, "red");
     }
 
-    public Circle (int xdiameter, int ydiameter, int xPosition, int yPosition, String color)
+    public Circle (int diameter, int xPosition, int yPosition, String color)
     {
-        super(xdiameter, ydiameter, xPosition, yPosition, color, true);
+    //    super(xdiameter, ydiameter, xPosition, yPosition, color, true);
     }
 
     @Override
