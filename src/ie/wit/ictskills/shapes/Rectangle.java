@@ -1,6 +1,6 @@
 package ie.wit.ictskills.shapes;
 
-import ie.wit.ictskills.util.ellipse.EllipseMeasure;
+
 
 // TODO Task 1: Refactor: derive from Shapes super class
 
@@ -21,7 +21,7 @@ public class Rectangle extends Shapes implements Measurable
   {
     super(xPosition, yPosition, color, true);
     this.xSideLength = xSideLength;
-    this.ySideLength = yPosition;
+    this.ySideLength = ySideLength;
   }
 
   @Override

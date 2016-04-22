@@ -26,7 +26,7 @@ public class Ellipse extends Shapes implements Measurable
 
     }
 
-    public Ellipse(int xdiameter, int ydiameter, int xPosition, int yPosition, String color)
+    public Ellipse(int xdiameter, int ydiameter, int xPosition, int yPosition, String color, boolean isVisible)
     {
       super(xPosition, yPosition, color, true);
       this.xdiameter = xdiameter;

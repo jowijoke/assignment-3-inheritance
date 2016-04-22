@@ -1,4 +1,4 @@
-package util;
+package util; 
 
 import ie.wit.ictskills.shapes.Measurable;
 
@@ -14,10 +14,21 @@ public class Util
 	 * @param object The list of objects whose classes implement the interface Measurable
 	 * @return Returns the largest perimeter discovered among entire list objects.
 	 */
-	static public double maximum(ArrayList<Measurable> object) 
+	static public double maximum(ArrayList<Measurable> measurables) 
 	{
 		double max = 0;
-		// TODO Task 6: Implement method Util.maximum
-		return max;
+     
+     for(Measurable shape : measurables)
+     {
+       shape.perimeter();
+               
+     if(shape.perimeter() > max)
+     {
+       max = shape.perimeter();
+       
+     }
+    
+     } 
+     return max;
 	}
 }
