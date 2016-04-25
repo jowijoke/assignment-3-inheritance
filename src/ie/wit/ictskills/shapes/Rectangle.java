@@ -1,7 +1,5 @@
 package ie.wit.ictskills.shapes;
 
-
-
 // TODO Task 1: Refactor: derive from Shapes super class
 
 public class Rectangle extends Shapes implements Measurable
@@ -51,17 +49,17 @@ public class Rectangle extends Shapes implements Measurable
       canvas.wait(10);
     }
   }
-  
+
   @Override
-  public double perimeter() 
-  {   
+  public double perimeter()
+  {
     return (xSideLength + ySideLength) * 2;
   }
-  
-  public static void main(String[] args) 
+
+  public static void main(String[] args)
   {
-   Rectangle rectangle = new Rectangle();
-   rectangle.makeVisible();
-    
+    Rectangle rectangle = new Rectangle();
+    rectangle.makeVisible();
+
   }
 }
